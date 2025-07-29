@@ -405,8 +405,18 @@ def hexStringList():
 
 
 
+myString = "Burning 'em, if you ain't quick and nimble I go crazy when I hear a cymbal"
+cFiveByte = myString.encode()
+key = "ICE"
+byteKey = key.encode()
 
-
+def repeatKey():
+    cipher = bytearray()
+    for i in range(len(cFiveByte)):
+        cipher_byte = cFiveByte[i] ^ byteKey[i % len(byteKey)]
+        cipher.append(cipher_byte)
+    return cipher.hex()
+    
 
           
           
